@@ -21,9 +21,15 @@ ENV LC_ALL en_US.UTF-8
 RUN curl -sl https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
 RUN apt-get update && apt-get install -y nodejs
+
 RUN mkdir /tmp/node_packages
 COPY package.json /tmp/node_packages/package.json
 RUN cd /tmp/node_packages && npm install
+
+RUN mkdir /tmp/node_packages_615
+COPY package_615.json /tmp/node_packages_615/package.json
+RUN cd /tmp/node_packages_615 && npm install
+
 
 # SSH
 RUN apt-get install -y openssh-server
