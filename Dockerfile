@@ -30,6 +30,9 @@ RUN mkdir /tmp/node_packages_615
 COPY package_615.json /tmp/node_packages_615/package.json
 RUN cd /tmp/node_packages_615 && npm install
 
+# Man
+RUN apt-get -y man manpages-dev manpages-posix-dev
+RUN unminimize
 
 # SSH
 RUN apt-get install -y openssh-server
