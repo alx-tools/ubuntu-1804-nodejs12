@@ -32,7 +32,7 @@ RUN cd /tmp/node_packages_615 && npm install
 
 # Man
 RUN apt-get -y man manpages-dev manpages-posix-dev
-RUN unminimize
+RUN yes | unminimize
 
 # SSH
 RUN apt-get install -y openssh-server
