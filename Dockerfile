@@ -31,7 +31,7 @@ COPY package_615.json /tmp/node_packages_615/package.json
 RUN cd /tmp/node_packages_615 && npm install
 
 # Man
-RUN apt-get -y man manpages-dev manpages-posix-dev
+RUN apt-get -y install man manpages-dev manpages-posix-dev
 RUN yes | unminimize
 
 # SSH
